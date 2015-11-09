@@ -1,5 +1,5 @@
 '''
-Created on Nov 8, 2015
+Created on Nov 9, 2015
 
 @author: ds-ga-1007
 '''
@@ -22,20 +22,10 @@ def generateC_Y():
         #print i,s[i],AriAvrS
         if AriAvrS>=K:
             c[i]=(math.exp(-r*T)*(AriAvrS-K))
-    #print c,len(c)
-    return c   
+    return c
 
-C_Y=generateC_Y()
-Avr_Y=np.mean(C_Y)
+C_Y=generateC_Y()        
+Avr_Y=sum(C_Y)/n #or Avr_y=np.mean(c)
 Var_Y=np.square(np.std(C_Y))
-#print Avr_Y,Var_Y,np.std(C_Y)
-print C_Y
-print Avr_Y
-print C_Y-Avr_Y,sum(C_Y-Avr_Y)
-
-
-
-
-
-    
+print Avr_Y,Var_Y,np.std(C_Y)
 
