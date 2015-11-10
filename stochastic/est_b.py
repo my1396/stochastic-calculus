@@ -9,12 +9,20 @@ print n
 C_X,S_T=generateC_X()
 Avr_X=sum(C_X)/n
 Var_X=np.square(np.std(C_X))
+print "geometric average payoff:", Avr_X
+print "variance of geometric average payoff: ", Var_X
 C_Y=generateC_Y()
 Avr_Y=np.mean(C_Y)
 Var_Y=np.square(np.std(C_Y))
-print C_X,Avr_X
-Cov_XY=np.sum((np.array(C_X)-Avr_X)*(np.array(C_Y)-Avr_Y))
+print "arithmetic average payoff:", Avr_Y
+print "variance of arithmetic average payoff: ", Var_Y
+#print C_X
+#print C_Y
+#print C_X,Avr_X
+Cov_XY=np.sum((np.array(C_X)-Avr_X)*(np.array(C_Y)-Avr_Y))/n
+print "cov[x,y]: ",Cov_XY
 b_star=Cov_XY/Var_X
+print "optimal value of b: ", b_star
 rho=Cov_XY/math.sqrt(Var_X*Var_Y) # rho is correlation coefficient
 print "correlation coefficient: ",rho
 speed_up=1/(1-np.square(rho))
