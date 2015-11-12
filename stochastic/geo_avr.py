@@ -87,7 +87,7 @@ speed_up=1/(1-np.square(rho))
 print "variance reduction factor(speed-up): ", speed_up
 Y_b_star_bar=Avr_Y-b_star*(Avr_X-S_T)
 print "The price of the Asian Option on the arithmetic average is: ",Y_b_star_bar
-Var_Y_b_star_bar=1/n*(Var_Y-2*b_star*Cov_XY+np.square(b_star)*Var_X)
+Var_Y_b_star_bar=1.0/n*(Var_Y-2*b_star*Cov_XY+np.square(b_star)*Var_X)
 print "variance of the variance reduction technique: ",Var_Y_b_star_bar
 #print C_X
 print Avr_X,Var_X,S_T
