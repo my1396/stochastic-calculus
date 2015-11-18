@@ -1,6 +1,5 @@
 '''
 Created on Nov 12, 2015
-
 @author: ds-ga-1007
 '''
 from payoff import *
@@ -32,8 +31,8 @@ def main():
         else:
             C_T[i]=cash_or_nothing_binary_call_option(s0,r,sigma,T,K,Q)
     estimateofC=result(C_T)
-    print "list of C_T: (Times of replication: %d)" % (len(C_T))
-    print ['%.2f' % elem for elem in C_T]
+    #print "list of C_T: (Times of replication: %d)" % (len(C_T))
+    #print ['%.2f' % elem for elem in C_T]
     print "The times of C[i]=0 shown in the simulation: %d" % (C_T.count(0))
     if choose_option=="1":
         option="European Call Option"
